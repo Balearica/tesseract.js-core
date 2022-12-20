@@ -25,6 +25,7 @@
             api.SetImage(ptr, width, height, Uint8Array.BYTES_PER_ELEMENT, width);
             api.SetRectangle(0, 0, width, height);
             messageDiv.innerHTML = api.GetUTF8Text();
+            messageDiv.disabled = false;
             api.End();
             TessModule.destroy(api);
             TessModule._free(ptr);
@@ -33,6 +34,6 @@
     </script>
   </head>
   <body>
-    <textarea id="message">Working...</textarea>
+    <textarea disabled id="message">Working...</textarea>
   </body>
 </html>
